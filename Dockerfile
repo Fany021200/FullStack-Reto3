@@ -1,1 +1,18 @@
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC31fI9tcDXx21bXwUmiomET9yXD3stjKSqUXXRiO8upLaESorF052HKG0bp0KqTxHB8kHMRYCJgZF7OkGK8yB760aHkOO9WXdoy6FQxycpuGLf1EvizCqycSyTmjaUkSqwJnJheC36JQpWAZEZYudszdd0K/vZVowifVwAsHW3kZwcDqrCcVos3buIVpayCjdmH1E6Xc6g80OkBpBqAlny6xHAp56QtVjymNe63jqikSjuqmY+1kgfh9ZHKRO1+f9ETN8DBCobSBBrSMLOC8uIJzQoF6LhSX/zztKSYVyIuED62Y2zYNgPD6yyNiA8oQ6gO7dcmkc/cxwr0mWVqJTy0kBNs0wFJ8RSmfAtWauxn9nAzgZ9ZDrYLoDQdUOHg3JkDET6jMxhvOoo6k2DRCMraAoKaPNZ55HuKuKHzOL7msPXd2AXsi0gxSBvj8P7AVo0z74OqeHrvW1F87mCNbe659RFLw9QKlkoJweyL4SsYajKJMUwdF8hE+AnzLRrDzDJLtv8+v3SxgdYZROJQymO6BZa4Ei1fds+UGHdbKgb9Bxc47xmIgoisB5JSciDiwGN9prBpwqn+RpOMdFSbkQrADMqLExsCotVuFRUpFGNYTsFNXhLYpcPBeru/e0HvVAKIiUUJGncczSoCt71G2OJIpDwO/SCk480IB4hRHt6HQ== fany.021200@gmail.com
+FROM ubuntu:latest
+
+# Instalar dependencias
+RUN apt-get update && apt-get install -y \
+    paquete1 \
+    paquete2 \
+    paquete3 \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copiar archivos de la aplicación al contenedor
+COPY archivo_local /ruta_en_el_contenedor
+
+# Establecer el directorio de trabajo
+WORKDIR /ruta_en_el_contenedor
+
+# Ejecutar comando al iniciar el contenedor
+CMD ["comando", "argumento"]
